@@ -6,11 +6,13 @@ exploring the creation of a "gauge cluster" for next gen automobiles
 
 This is simply a personal curiosity for now. I've been enamored with cars since childhood and then game programming and web development as a young adult. This is just exploring whether I can combine the two in any kind of meaningfully satisfying way and to see what problems and challenges come up in the process. (See the fantasy mission statement for what I'd love to see this become...if it goes anywhere but into the recycle bin...)
 
-### Fantasy Mission Statement
-Provide an open (non-proprietary) user-interface for next generation automobiles that's loved by the end-user (for its speed, simplicity, configurability, and general utility) and sought-out and embraced by OEM and after-market providers (for quick, reliable adoption, and easy maintenance and extendability) 
-
-...**dreaming on**.
-
+>### Fantasy Mission Statement
+>Provide an open (non-proprietary) user-interface for next generation automobiles that's...
+>1. **loved by the end-user** (for its speed, simplicity, user-configurability, and overall utility) 
+>1. **sought, embraced, and preferred by OEM and after-market providers** (for quick, easy adoption, reliability, and inexpensive maintenance and extension) 
+>1. **enjoyed by developers** (for being cool, fun to work with, and leveraging their skill investments--without bloat, throw-away frameworks and copypasta)
+>
+>(dreaming on...)
 
 If this is an area that you find interesting as well, I'd love your feedback. 
 
