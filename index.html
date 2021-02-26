@@ -13,6 +13,53 @@
     This is a personal project stemming from a curiosity with cars, game programming, and web development.
     <p>This page is intended to be replaced as the project proceeds -- in my spare time. </p>
     <p>If you are interested, check back. Otherwise, move along -- nothing to see here currently.</p>
+
+    <h2>Scope</h2>
+    Draft: My curiosity is primarily focused on personal electric vehicles--from a startup standpoint. But I'm drawing from my limited experience with internal combustion engine vehicles I've driven. 
+    <p>If I feel like I'm hitting a stride with this project, I may increase the scope... for example I'm curious for a camping or mobile-living application, in which cooking fuel, water storage capacity, hot water capacity, accessory battery supply, solar or other charge rate, etc. I'm also interested in considering commercial applications such as personal transport/taxi service, delivery vehicle (food or otherwise), "food truck", mobile compute or scientific application, large-scale transport, ambulatory, fire, police, road-side assistance, trash collection (?), recreation vehicles, watercraft (?). 
+    
+    <p>The imagined audience for this effort is to provide a low or no-cost entry option for startups or hobbyists to leverage so they don't need to invest in solutioning a first-pass/prototype from zero. As such, a non-proprietary, open and decently documented (or self-documented through non-clever coding) that can be easily forked or branched as desired is what I hope to produce as output. (And again, this is personal curiosity... its probable that this has already been solved elsewhere and better, but I find this topic interesting and want to invest some time and effort to satiate my own interest.)
+
+    <p></p>
+    <h3>Some general guiding principles</h3>
+    <ol>
+        <li>Prefer self-documented coding practices and introspection instead of heavy external documentation. (The idea is to quickly prototype, not to sell reams of paper or tickets to an annual conference.) 
+        <li>Resist obfuscation or exclusionary practices (The idea is no barrier to entry. Shortcut early stage dev so a user can evaluate, adopt, or reject this as quickly as possible.)</li>
+        <li>Don't over-engineer... this is intended to be bare-bones to implement, and then layered improvements to add further functionality (assuming I get that far)</li>
+        <li>Backward compatibility!! (As a software engineer, having to do complicated/risky refactors in order to upgrade dependencies is a scourge--try to avoid doing that to others.)</li>
+    
+    </ol>
+        
+    <h2>Gauges</h2>
+    Draft: Assemble a list of gauges found in an automotive application. (Starting with what might be found in a standard car.)
+    <p>Further, consider more specialized applications. For example, what might be found in a transport trailer, off road vehicle, and other vehicle types.</p>
+    <p>Categorize the gauges by NEED, WANT. For example, is the information from this gauge required for the driver to operate the vehicle efficiently.</p>
+    <p>Consider further subdivisions: Critical, Useful, Interesting. Informational, Play. Consider the role the information from this gauge plays in operating the vehicle. My goal would be to provide the optimal assortment of minimally necessary information a driver needs to operate their vehicle at highest efficiency. But, with the option to include more information per their individual preference. For example, countries that use the metric system and countries that use other standards will want the information presented in the appropriate scale and this should be a software option available to a user if they wish.</p>
+    <p>Consider safety orientation categories. Such as does this gauge require high or low cognitive overhead to process. How long must a drivers attention be focused on this gauge for them to process the data. How often must the driver place attention on the gauge. 
+    <b>Ideally, gauges and UI that require low cognitive overhead and low to no manual interaction are considered optimal.</b>
+    Some software options may benefit from being locked out while the vehicle is moving (in order to de-incentivize the driver from being distracted from driving while browsing options). However, when a passenger is present, perhaps its okay to make these options available provided the driver delegates the browsing to the passenger.
+    </p>
+<ul>
+    <li>Speedometer</li>
+    <li>Odometer</li>
+    <li>"Fuel" (battery charge or otherwise)</li>
+    <li>Battery</li>
+    <li>Temperature (inside, outside, maybe various part of the car such as motor, storage, fuel, brakes?)</li>
+    <li>...</li>
+    <li>Interactive GPS Map</li>
+    <li>Distance to "Empty"</li>
+    <li>Discharge rate, graphed over time (?)</li>
+    <li>Fill rate, during fueling/charging</li>
+    <li>Regen rate during engine braking (?)</li>
+    <li>Tire pressure (preferrably by wheel, and suggestion PSI range by loading)</li>
+    <li>Fluid levels: brake, washer, oil (?), tranmission (?)</li>
+</ul>
+
+
+    <h2>Skins</h2>
+    These gauges are anticipated to be based in software and rendered onto a user-interface, probably a flat screen color panel such as a screen that might be found in a computer monitor, cellphone, or tablet device. As such, providing a range of color schemes and visual styling would be a nice option to provide a driver (and/or passengers) so they can choose a visual or auditory experience to their liking. Further, being able to persist selected options associated with individuals which can either automatically select when that occupant is present in the role associated with the option, or selectable through the least amount of manual interaction is preferred.
+
+
 </body>
 
 </html>
