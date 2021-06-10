@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+body {
+    padding: 1em;
+}
+body, button {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.1em;
+}
+
+.light {
+    background: #eee;
+    color: #333;
+}
+.dark {
+    background: #333;
+    color: #ccc;
+}
+
+button {
+    border-radius: 4px;
+}
