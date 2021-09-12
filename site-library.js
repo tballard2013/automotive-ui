@@ -16,7 +16,7 @@
         let el = document.createElement('button');
         el.innerHTML = `Mode: ${mode}`;
         el.style.position = 'fixed';
-        el.style.top = '1em';
+        el.style.bottom = '1em';
         el.style.right = '1em';
 
         el.onclick = (ev) => {

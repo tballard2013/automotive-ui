@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automotive UI - Coming Soon?</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="/site-library.js"></script>
 </head>
 
@@ -15,6 +16,7 @@
     This is a personal project stemming from a curiosity with cars, game programming, and web development.
     <p>This page is intended to be replaced as the project proceeds -- in my spare time. </p>
     <p>If you are interested, check back. Otherwise, move along -- nothing to see here currently.</p>
+    (Draft docs: <a href="intro.md">Intro</a>)
 
     <h2>Scope</h2>
     Draft: My curiosity is primarily focused on personal electric vehicles--from a startup standpoint. But I'm drawing from my limited experience with internal combustion engine vehicles I've driven. 
@@ -29,7 +31,7 @@
         <li>Resist obfuscation or exclusionary practices (The idea is no barrier to entry. Shortcut early stage dev so a user can evaluate, adopt, or reject this as quickly as possible.)</li>
         <li>Don't over-engineer... this is intended to be bare-bones to implement, and then layered improvements to add further functionality (assuming I get that far)</li>
         <li>Backward compatibility!! (As a software engineer, having to do complicated/risky refactors in order to upgrade dependencies is a scourge--try to avoid doing that to others.)</li>
-    
+  
     </ol>
         
     <h2>Gauges</h2>
@@ -62,6 +64,31 @@
     These gauges are anticipated to be based in software and rendered onto a user-interface, probably a flat screen color panel such as a screen that might be found in a computer monitor, cellphone, or tablet device. As such, providing a range of color schemes and visual styling would be a nice option to provide a driver (and/or passengers) so they can choose a visual or auditory experience to their liking. Further, being able to persist selected options associated with individuals which can either automatically select when that occupant is present in the role associated with the option, or selectable through the least amount of manual interaction is preferred.
 
 
+<!-- fiddle with Vue -->
+<div id="dashboard">
+    Dashboard: Screen {{ page }}
+    <h1>{{ title }}</h1>
+    
+    <span v-html="html"></span>
+
+</div>
+<script>
+var app = new Vue({
+    el: '#dashboard',
+    data: {
+        title: 'Welcome / Intro',
+      page: 1,
+      html: `
+        Purpose: 
+        <ol>
+            <li> Present loading message (if applicable)
+            <li> Present any requlatory message requirements.
+        </ol>
+      `
+    }
+  })
+</script>
+  
 </body>
 
 </html>

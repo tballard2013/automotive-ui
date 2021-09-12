@@ -19,3 +19,23 @@ body, button {
 button {
     border-radius: 4px;
 }
+
+#dashboard {
+    shape-outside: margin-box;
+    position: fixed;
+    top: 1em; right: 1em;
+    width: 33vw;
+    height: 33vh;
+    background: #ccc;
+    border: 4px #000 solid;
+    border-radius: 1em;
+    opacity: .7;
+    color: #000;
+    padding: 1em;
+    z-index: 9;
+    overflow: auto;
+    font-size: .8em;
+}
+#dashboard:hover {
+    opacity: 1.0;
+}
