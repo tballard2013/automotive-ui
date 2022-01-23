@@ -11,7 +11,12 @@
 </head>
 
 <body class="light">
+    <div style="float:right; width:60%; padding: 2em;">
+        [Example UI: <button onclick="toggleContainerVisibility()">On/Off</button>]
+    </div>
+
     <h1>Automotive UI (WIP)</h1>
+
 
     This is a personal project stemming from a curiosity with cars, game programming, and web development.
     <p>This page is intended to be replaced as the project proceeds -- in my spare time. </p>
@@ -66,27 +71,86 @@
 
 <!-- fiddle with Vue -->
 <div id="dashboard">
-    Dashboard: Screen {{ page }}
-    <h1>{{ title }}</h1>
-    
-    <span v-html="html"></span>
-
-</div>
-<script>
-var app = new Vue({
-    el: '#dashboard',
-    data: {
-        title: 'Welcome / Intro',
-      page: 1,
-      html: `
-        Purpose: 
+    <template v-if="page === '#drive'">
+        TODO: "Drive" screen.
+    </template>
+    <template v-else-if="page === '#park'">
+        TODO: "Park" screen.
+    </template>
+    <template v-else-if="page === '#reverse'">
+        TODO: "Reverse" screen.
+    </template>
+    <template v-else-if="page === '#accessory'">
+        TODO: "Accessory" screen.
+    </template>
+    <template v-else-if="page === '#map'">
+        <iframe src="https://embed.waze.com/iframe?zoom=14&lat=34.286864&lon=-118.717918&ct=livemap" width="100%"
+            height="80%" allowfullscreen></iframe>
+    </template>
+    <template v-else>
+        <h1>Welcome / Intro</h1>
+        Purpose:
         <ol>
             <li> Present loading message (if applicable)
             <li> Present any requlatory message requirements.
         </ol>
-      `
+    </template>
+
+    <span v-html="html"></span>
+
+    <div style="position:absolute; bottom:1em;">
+        &nbsp;[
+        <a href="#park">Park</a>
+        <a href="#reverse">Reverse</a>
+        <a href="#drive">Drive</a>
+        <a href="#accessory">Accessory</a>
+        ]&nbsp;
+        <a href="#map">Map</a>
+        <a href="#home">Intro</a>
+        <a href="#" v-on:click="onDestroyClick">(Off)</a>
+    </div>
+</div>
+<script>
+window.autoApp = new Vue({
+    el: '#dashboard',
+    data: {
+        page: '#home', // (location.hash || '#home'), // always start at home/intro screen
+        html: '' // using page vars for now... revisit?
+    },
+    methods: {
+        onDestroyClick: function () {
+            toggleContainerVisibility(false)
+            // this.$destroy();
+        },
+        processHashchange: function(ev) {
+            this.page = location.hash; 
+            console.log(`hash changed: page is now ${this.page}`);
+        }
+    },
+    beforeDestroy: function () {
+        console.log('Initiate shutdown...');
+        // this.$el.style.display = 'none';
+        // window.removeEventListener('hashchange', this.processHashchange, false);
+        // setTimeout(() => { delete window.autoApp; 
+        //     console.log('Shutdown complete.');
+        // }, 100);
+    },
+    async created () {
+        this.$mount('#dashboard')
+        window.addEventListener('hashchange', this.processHashchange, false);
     }
-  })
+})
+
+toggleContainerVisibility = (show) => {
+    let el = document.querySelector('#dashboard');
+    if (show || el.getAttribute('data-hidden')) {
+        el.style.opacity = 100;
+        el.removeAttribute('data-hidden');
+    } else {
+        el.style.opacity = 0;
+        el.setAttribute('data-hidden', true);
+    }
+}
 </script>
   
 </body>
