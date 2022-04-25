@@ -39,3 +39,32 @@ button {
 #dashboard:hover {
     opacity: 1.0;
 }
+
+#dashboard.dashboard-light a,
+#dashboard.dashboard-medium a {
+    color: #000;
+    font-size: 1rem;
+}
+#dashboard.dashboard-dark a {
+    color: #fff;
+}
+#dashboard a:hover {
+    text-shadow: 
+        0px 0px 2px #fff,
+        0px 0px 2px #000;
+}
+
+#dashboard.dashboard-light {
+    background-image: url(./assets/white-wood-textures.jpg);
+    background-size: 100%;
+    color: #000;
+}
+#dashboard.dashboard-medium { 
+    background-image: url(./assets/wood-grain-light/21.jpg);
+    background-size: 50%;
+}
+#dashboard.dashboard-dark {
+    background-image: url(./assets/mockup-photos-5nUNdLueQio-unsplash.jpg);
+    background-size: 100%;
+    color: #fff;
+}

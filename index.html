@@ -70,22 +70,40 @@
 
 
 <!-- fiddle with Vue -->
-<div id="dashboard">
+<div id="dashboard" v-bind:class="scheme">
     <template v-if="page === '#drive'">
         TODO: "Drive" screen.
     </template>
     <template v-else-if="page === '#park'">
         TODO: "Park" screen.
+
+        <li>Battery charge: 50% 
+        <li>Estimated Miles to Empty: 200 miles
+        <li>Time: {{ new Date().toLocaleString() }}
+        <li>Temperature: 80F
+
     </template>
     <template v-else-if="page === '#reverse'">
         TODO: "Reverse" screen.
     </template>
     <template v-else-if="page === '#accessory'">
         TODO: "Accessory" screen.
+
+        <li>Color scheme: [
+            <a href="#" onclick="return autoApp.handleClick('dashboard-light');">light</a> |
+            <a href="#" onclick="return autoApp.handleClick('dashboard-medium');">medium</a> |
+            <a href="#" onclick="return autoApp.handleClick('dashboard-dark');">dark</a> ]
+        </li>
     </template>
     <template v-else-if="page === '#map'">
         <iframe src="https://embed.waze.com/iframe?zoom=14&lat=34.286864&lon=-118.717918&ct=livemap" width="100%"
             height="80%" allowfullscreen></iframe>
+    </template>
+    <template v-else-if="page === '#credit'">
+        <li><a href='https://www.freepik.com/vectors/wood-pattern'>Wood pattern vector created by saragnzalez - www.freepik.com</a>
+        <li><a href='https://www.freepik.com/photos/oak-wood'>Oak wood photo created by mrsiraphol - www.freepik.com</a></li>
+        <li>Photo by <a href="https://unsplash.com/@mockup_photos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mockup Photos</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </li>
     </template>
     <template v-else>
         <h1>Welcome / Intro</h1>
@@ -107,6 +125,7 @@
         ]&nbsp;
         <a href="#map">Map</a>
         <a href="#home">Intro</a>
+        <a href="#credit">Credit</a>
         <a href="#" v-on:click="onDestroyClick">(Off)</a>
     </div>
 </div>
@@ -114,6 +133,7 @@
 window.autoApp = new Vue({
     el: '#dashboard',
     data: {
+        scheme: localStorage.getItem('scheme') || 'dashboard-light',
         page: '#home', // (location.hash || '#home'), // always start at home/intro screen
         html: '' // using page vars for now... revisit?
     },
@@ -121,6 +141,11 @@ window.autoApp = new Vue({
         onDestroyClick: function () {
             toggleContainerVisibility(false)
             // this.$destroy();
+        },
+        handleClick: function(v) {
+            this.scheme = v;
+            localStorage.setItem('scheme', this.scheme);
+            return false;
         },
         processHashchange: function(ev) {
             this.page = location.hash; 
